@@ -1,1 +1,14 @@
+name: Docker Image CI
 
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main, master]
+  pull_request:
+    branches: [ main, master]
+jobs:
+  build-docker:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout sources
+      uses: actions/checkout@v2
